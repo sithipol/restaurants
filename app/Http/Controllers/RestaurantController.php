@@ -14,15 +14,17 @@ class RestaurantController extends Controller
      */
     public function index()
     {
+        $key = "AIzaSyAtx7gjQL-l_rGENd8bjUqk2DRtdAbWxqY";
         $response = Http::get('https://maps.googleapis.com/maps/api/place/textsearch/json', [
             'query' => 'restautants in BangSue',
-            'key' => 'AIzaSyAtx7gjQL-l_rGENd8bjUqk2DRtdAbWxqY',
+            'key' => $key,
         ]);
         if($response->ok()){
             $list_restaurants = $response->json();
         }else{
             $list_restaurants = [];
         }
+        $list_restaurants['key'] = $key;
         return $list_restaurants;
     }
 
