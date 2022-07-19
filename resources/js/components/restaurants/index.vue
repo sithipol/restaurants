@@ -1,22 +1,25 @@
 <style scoped>
-.ul li {
-  color: red;
+input {
+    size: 70px;
 }
 </style>
 <template>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <input
+                <input class="form-control"
                     type="text"
                     v-model="search"
-                    placeholder="Search people..."
+                    placeholder="Search restaurant..."
                 /><br />
 
                 {{ getAllRestaurantInBangSue() }}
 
                 <ul>
-                    <li v-for="(restaurant, index) in filteredRestaurants" :key="index">
+                    <li
+                        v-for="(restaurant, index) in filteredRestaurants"
+                        :key="index"
+                    >
                         {{ restaurant.name }}
                     </li>
                 </ul>
