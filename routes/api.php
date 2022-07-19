@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-});
+}); 
 
-Route::get('restaurants', [RestaurantController::class, 'index']);
-// https://maps.googleapis.com/maps/api/place/textsearch/json?query=restautants%20in%20BangSue&key=AIzaSyAtx7gjQL-l_rGENd8bjUqk2DRtdAbWxqY
+Route::get('restaurants', [RestaurantController::class, 'index']); // api restaurants in BangSue

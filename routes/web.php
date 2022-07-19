@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/restaurants', function () {
+Route::get('/restaurants', function () { // search restaurants in BangSue
     return view('restaurants.index');
 });
 
